@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Times New Roman', Times, serif;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+#main {
+    height: 100%;
+    width: 100%;
+    background-color: whitesmoke;
+}
+
+nav {
+    height: 100px;
+    width: 100%;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px
+}
+
+nav #nav-part1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+nav h3, i {
+    font-size: 17px;
+    border: 1.5px solid black;
+    padding: 5px 10px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+nav h1 {
+    font-size: 22px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+nav button {
+    padding: 7px 12px;
+    border-radius: 50px;
+    border: 1.5px solid black;
+    font-size: 17px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+nav button:nth-child(2) {
+    background-color: orangered;
+    color: #fff;
+    border: none;
+}
+
+#main>h1 {
+    font-size: 55px;
+    text-transform: uppercase;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    text-align: center;
+}
+
+#main img {
+    height: 300px;
+    width: 250px;
+    object-fit: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    object-position: top;
+    border-radius: 20px;
+    transition: 0.5s all ease;
+}
+
+#main #img1 {
+    transform: translate(-50%, -50%) rotate(-30deg);
+}
+
+#main #img2 {
+    transform: translate(-50%, -50%) rotate(-20deg);
+}
+
+#main #img3 {
+    transform: translate(-50%, -50%) rotate(-10deg);
+}
+
+#main #btm-left {
+    position: absolute;
+    bottom: 5%;
+    left: 3%;
+    font-size: 17px;
+}
+
