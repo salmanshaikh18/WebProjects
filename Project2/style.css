@@ -72,23 +72,30 @@ nav h3 {
 }
 
 #about {
-    height: 45%;
+    height: 46%;
     width: 100%;
     background-color: azure;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 30px 60px;
 }
 
 #about h2 {
-    background-color: red;
+    /* background-color: red; */
     width: 60%;
     font-size: 50px;
-    line-height: 45px;
+    line-height: 50px;
+    font-weight: 600;
+    letter-spacing: -3px;
 }
 
 #about-2 {
-    width: 30%;
+    width: 36%;
+    height: 100%;
+    margin-top: 80px;
+    border-left: 2px solid #000;
+    padding: 0 40px;
 }
 
 /* @media (max-width: 700px) {
