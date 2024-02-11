@@ -106,3 +106,15 @@ nav button:nth-child(2) {
     font-size: 17px;
 }
 
+@media (max-width: 450px) {
+    #nav-part2, #nav-part3 {
+        display: none;
+    }
+    #nav-part1 {
+        width: 100vh;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 25px;
+    }
+}
+
