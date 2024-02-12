@@ -61,9 +61,11 @@ let popularProducts = [
   },
 ];
 
+let cart = []
+
 const addProducts = (products) => {
   let clutter = "";
-  products.forEach((product) => {
+  products.forEach((product, index) => {
     clutter += `
       <div class="product w-fit rounded-xl p-2 bg-white">
       <div class="image w-[14rem] h-[13rem] bg-zinc-200 rounded-xl overlfow-hidden">
@@ -78,8 +80,7 @@ const addProducts = (products) => {
                   <h3 class="font-semibold opacity-20">${product.headline}</h3>
                   <h4 class="font-semibold mt-2">&#x20b9;${product.price}</h4>
               </div>
-              <button class="w-10 h-10 rounded-full shader text-yellow-400"><i
-                      class="ri-add-line"></i></button>
+              <button data-index=${index} class="add w-10 h-10 rounded-full shader text-yellow-400"><i data-index=${index} class="add ri-add-line"></i></button>
           </div>
       </div>
   </div>
@@ -88,6 +89,8 @@ const addProducts = (products) => {
 
   document.querySelector(".products").innerHTML = clutter;
 };
+
+// show real popular products
 
 const addPopularProducts = (popularProducts) => {
   let clutter = "";
@@ -111,8 +114,56 @@ const addPopularProducts = (popularProducts) => {
   document.querySelector('.populars').innerHTML = clutter
 
 };
+const addToCart = (cart, products) => {
+    
+    document.querySelector('.products').addEventListener('click', (e) => {
+        if (e.target.classList.contains('add')) {
+            // console.log(e.target.dataset.index)
+            cart.push(products[e.target.dataset.index])
+            
+        }
+    })
+}
+let flag = true;
+
+const showCart = (cart, flag) => {
+  const cartExpnd = document.querySelector('.cartexpnd');
+
+  document.querySelector('.carticon').addEventListener('click', () => {
+    if (flag) {
+      cartExpnd.style.display = 'flex';
+      let clutter = "";
+      cart.forEach((product, index) => {
+        clutter += `
+        <div class="flex gap-2 bg-white --2 rounded-lg">
+        <div class="flex gap-2 bg-white p-2 rounded-lg">
+            <div class="w-10 h-10 flex-shrink-0 rounded-lg">
+                <img class="w-full h-full object-cover" src=${product.image} />
+            </div>
+            <div>
+                <h3 class="font-semibold">${product.name}</h3>
+                <h5 class="text-sm font-semibold opacity-80">${product.price}</h5>
+            </div>
+        </div>
+    </div>
+        `
+      })
+      cartExpnd.innerHTML = clutter
+    } else {
+      cartExpnd.style.display = 'none';
+    }
+
+    flag = !flag;
+  });
+}
+
+showCart(cart, flag)
+
+console.log(cart)
+
+addToCart(cart, products)
 
 addProducts(products);
 addPopularProducts(popularProducts);
-// show real popular products
+
 // on click of product add button add it to the cart
