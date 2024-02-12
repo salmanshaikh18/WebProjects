@@ -120,7 +120,7 @@ const addToCart = (cart, products) => {
         if (e.target.classList.contains('add')) {
             // console.log(e.target.dataset.index)
             cart.push(products[e.target.dataset.index])
-            
+            alert(`Item added to cart :)`)
         }
     })
 }
